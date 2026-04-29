@@ -24,9 +24,11 @@
                 enumitem
                 titlesec
                 parskip
-                ec
-                cm-super
                 latexindent
+xetex
+                fontspec
+                raleway
+                graphics
                 ;
             };
           in
@@ -40,7 +42,7 @@
             name = "cv";
             src = ./.;
             buildInputs = [ tex ];
-            buildPhase = "pdflatex cv.tex";
+            buildPhase = "xelatex cv.tex";
             installPhase = "install -Dm644 cv.pdf $out/cv.pdf";
           };
         }
@@ -57,7 +59,7 @@
           watch = {
             type = "app";
             program = "${pkgs.writeShellScript "watch-cv" ''
-              echo cv.tex | ${pkgs.entr}/bin/entr ${tex}/bin/pdflatex cv.tex
+              echo cv.tex | ${pkgs.entr}/bin/entr ${tex}/bin/xelatex cv.tex
             ''}";
           };
         }
