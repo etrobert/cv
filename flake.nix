@@ -25,7 +25,7 @@
                 titlesec
                 parskip
                 latexindent
-xetex
+                xetex
                 fontspec
                 raleway
                 graphics
