@@ -1,0 +1,63 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[margin=2cm]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1em}{0.5em}
+
+\setlist[itemize]{noitemsep, topsep=0pt, leftmargin=1.5em}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+  {\LARGE\bfseries Etienne Robert} \\[0.4em]
+  etiennerobert33@gmail.com \quad | \quad
+  \href{https://github.com/}{github.com/username} \quad | \quad
+  Montreal, QC
+\end{center}
+
+\section{Summary}
+Software engineer with experience building reliable systems and developer tooling.
+Comfortable across the stack, with a preference for clean, maintainable code.
+
+\section{Experience}
+
+\textbf{Senior Software Engineer} \hfill 2022 -- Present \\
+\textit{Company Name} \hfill Montreal, QC
+\begin{itemize}
+  \item Led development of X, reducing latency by 40\%
+  \item Mentored junior engineers and conducted code reviews
+  \item Migrated legacy service to Go, improving maintainability
+\end{itemize}
+
+\vspace{0.5em}
+
+\textbf{Software Engineer} \hfill 2019 -- 2022 \\
+\textit{Previous Company} \hfill Montreal, QC
+\begin{itemize}
+  \item Built internal tooling adopted across 3 teams
+  \item Designed and implemented REST APIs serving 10k req/s
+\end{itemize}
+
+\section{Education}
+
+\textbf{B.Sc. Computer Science} \hfill 2019 \\
+\textit{Université de Montréal} \hfill Montreal, QC
+
+\section{Skills}
+
+\begin{tabular}{@{}ll}
+  \textbf{Languages:} & Go, Python, TypeScript, Nix \\
+  \textbf{Tools:}     & Linux, Docker, PostgreSQL, Git \\
+\end{tabular}
+
+\end{document}
