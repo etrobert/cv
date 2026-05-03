@@ -49,11 +49,15 @@
       );
 
       apps = forAllSystems (
-        pkgs: tex: {
+        pkgs: tex:
+        let
+          system = pkgs.stdenv.hostPlatform.system;
+        in
+        {
           default = {
             type = "app";
             program = "${pkgs.writeShellScript "open-cv" ''
-              exec ${pkgs.xdg-utils}/bin/xdg-open ${self.packages.${pkgs.system}.default}/cv.pdf
+              exec ${pkgs.xdg-utils}/bin/xdg-open ${self.packages.${system}.default}/cv.pdf
             ''}";
           };
           watch = {
