@@ -11,4 +11,4 @@
 *.synctex.gz
 .direnv
 result
-cv.pdf
+*.pdf
