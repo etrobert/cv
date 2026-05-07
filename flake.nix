@@ -63,21 +63,27 @@
         {
           default = {
             type = "app";
-            program = "${pkgs.writeShellScript "open-cv" ''
-              exec ${pkgs.xdg-utils}/bin/xdg-open ${self.packages.${system}.default}/cv.pdf
-            ''}";
+            program = toString (
+              pkgs.writeShellScript "open-cv" ''
+                exec ${pkgs.xdg-utils}/bin/xdg-open ${self.packages.${system}.default}/cv.pdf
+              ''
+            );
           };
           watch = {
             type = "app";
-            program = "${pkgs.writeShellScript "watch-cv" ''
-              echo cv.tex | ${pkgs.entr}/bin/entr ${tex}/bin/xelatex cv.tex
-            ''}";
+            program = toString (
+              pkgs.writeShellScript "watch-cv" ''
+                echo cv.tex | ${pkgs.entr}/bin/entr ${tex}/bin/xelatex cv.tex
+              ''
+            );
           };
           watch-letter = {
             type = "app";
-            program = "${pkgs.writeShellScript "watch-letter" ''
-              echo letter.tex | ${pkgs.entr}/bin/entr ${tex}/bin/xelatex letter.tex
-            ''}";
+            program = toString (
+              pkgs.writeShellScript "watch-letter" ''
+                echo letter.tex | ${pkgs.entr}/bin/entr ${tex}/bin/xelatex letter.tex
+              ''
+            );
           };
         }
       );
