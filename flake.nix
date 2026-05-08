@@ -59,13 +59,14 @@
         pkgs: tex:
         let
           system = pkgs.stdenv.hostPlatform.system;
+          open = if pkgs.stdenv.isDarwin then "open" else "${pkgs.xdg-utils}/bin/xdg-open";
         in
         {
           default = {
             type = "app";
             program = toString (
               pkgs.writeShellScript "open-cv" ''
-                exec ${pkgs.xdg-utils}/bin/xdg-open ${self.packages.${system}.default}/cv.pdf
+                exec ${open} ${self.packages.${system}.default}/cv.pdf
               ''
             );
           };
